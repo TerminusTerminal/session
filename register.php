@@ -36,17 +36,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Register</title>
 </head>
 <body>
-    <h1>Register</h1>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="post">
-        <input type="text" name="account_holder_name" placeholder="Account Holder Name" required><br>
-        <input type="text" name="bank_name" placeholder="Bank Name" required><br>
-        <input type="text" name="account_number" placeholder="Account Number" required><br>
-        <input type="password" name="password" placeholder="Password" required><br>
-        <input type="number" step="0.01" name="balance" placeholder="Initial Balance" required><br>
-        <button type="submit">Register</button>
-    </form>
-    <a href="login.php">Login</a>
+    <div class="topbar">
+        <div class="logo">
+            <h1>IBS</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner-content">
+            <h1>Register</h1>
+            <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+            <form method="post">
+                <input type="text" name="account_holder_name" placeholder="Account Holder Name" required><br>
+                <input type="text" name="bank_name" placeholder="Bank Name" required><br>
+                <input type="text" name="account_number" placeholder="Account Number" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="number" step="0.01" name="balance" placeholder="Initial Balance" required><br>
+                <button type="submit">Register</button>
+            </form>
+            <a href="login.php">Login</a>
+        </div>
+    </div>
+
 </body>
 </html>
 

@@ -2,21 +2,21 @@
 require 'db.php';
 session_start();
 
-if (!isset($_SESSION['account_number'])) {
+if (!isset($_SESSION['account_number'])) { //account checker :)
     header('Location: login.php');
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $deposit_amount = $_POST['deposit_amount'];
-    $password = $_POST['password'];
-    $sql = "SELECT * FROM accounts WHERE account_number = :account_number";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['account_number' => $_SESSION['account_number']]);
-    $user = $stmt->fetch();
 
-    if ($user && password_verify($password, $user['password'])) {
-        if ($deposit_amount > 0) {
+    if ($deposit_amount > 0) {
+        $sql = "SELECT balance FROM accounts WHERE account_number = :account_number";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute(['account_number' => $_SESSION['account_number']]);
+        $user = $stmt->fetch();
+
+        if ($user) {
             $new_balance = $user['balance'] + $deposit_amount;
             $update_sql = "UPDATE accounts SET balance = :new_balance WHERE account_number = :account_number";
             $update_stmt = $pdo->prepare($update_sql);
@@ -24,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: check_balance.php');
             exit;
         } else {
-            $error = "Deposit amount must be greater than zero.";
+            $error = "Account not found.";
         }
     } else {
-        $error = "Incorrect password.";
+        $error = "Deposit amount must be greater than zero.";
     }
 }
 ?>
@@ -44,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
     <form method="post">
         <input type="number" name="deposit_amount" step="0.01" placeholder="Amount to Deposit" required><br>
-        <input type="password" name="password" placeholder="Enter Your Password" required><br>
         <button type="submit">Deposit</button>
     </form>
     <a href="check_balance.php">Back to Check Balance</a>
 </body>
 </html>
+

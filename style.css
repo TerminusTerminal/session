@@ -30,7 +30,7 @@
   }
 
   .topbar a {
-    padding-right: 50px;
+    margin-right: 50px;
   }
 
   .topbar .logo {
@@ -78,6 +78,11 @@
     margin: 0 auto;
     color: #fff;
     padding-bottom: 20px;
+    align-items: center;
+  }
+
+  .content h1 {
+    align-items: center;
   }
 
   /*Just gonna put it here cuz im bad at navigating -Leynard*/

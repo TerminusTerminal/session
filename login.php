@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['account_holder_name'] = $user['account_holder_name'];
         $_SESSION['account_number'] = $user['account_number'];
         $_SESSION['balance'] = $user['balance'];
-        header('Location: welcome.php');
+        header('Location: index.php');
         exit;
     } else {
         $error = "Invalid account number or password.";
