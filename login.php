@@ -3,29 +3,21 @@ require 'db.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get the form input values
-    $account_number = trim($_POST['account_number']); // Account number for login
-    $password = $_POST['password']; // Plain password entered by user
-
-    // SQL query to check if account number exists
+    $account_number = trim($_POST['account_number']);
+    $password = $_POST['password']; 
     $sql = "SELECT * FROM accounts WHERE account_number = :account_number";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['account_number' => $account_number]);
     $user = $stmt->fetch();
 
-    // If user exists and password matches
     if ($user && password_verify($password, $user['password'])) {
-        // Set session variables
         $_SESSION['user_id'] = $user['id'];
-        $_SESSION['account_holder_name'] = $user['account_holder_name']; // User's name
-        $_SESSION['account_number'] = $user['account_number']; // User's account number
-        $_SESSION['balance'] = $user['balance']; // User's balance
-
-        // Redirect to a welcome or dashboard page
+        $_SESSION['account_holder_name'] = $user['account_holder_name'];
+        $_SESSION['account_number'] = $user['account_number'];
+        $_SESSION['balance'] = $user['balance'];
         header('Location: welcome.php');
         exit;
     } else {
-        // If credentials are invalid
         $error = "Invalid account number or password.";
     }
 }

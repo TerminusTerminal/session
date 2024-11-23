@@ -15,7 +15,9 @@ if (!isset($_SESSION['user_id'])) {
     <title>Welcome</title>
 </head>
 <body>
-    <h1>Welcome, <?php echo htmlspecialchars($_SESSION['account_holder_name']); ?>!</h1>
-    <a href="logout.php">Logout</a>
+    <div class="topbar">
+        <h1>Welcome, <?php echo htmlspecialchars($_SESSION['account_holder_name']); ?>!</h1>
+        <a href="logout.php">Logout</a>
+    </div>
 </body>
 </html>

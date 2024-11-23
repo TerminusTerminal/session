@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost'; // Replace with your database host
-$db = 'simple_payments'; // Database name
-$user = 'root';      // Database username
-$pass = '1234';          // Database password
+$host = 'localhost';
+$db = 'simple_payments';
+$user = 'root';
+$pass = '1234';
 $port = 3308;
 
 try {
