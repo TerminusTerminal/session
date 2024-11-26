@@ -8,8 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
     $balance = trim($_POST['balance']);
 
-    $sql = "INSERT INTO accounts (account_holder_name, bank_name, account_number, password, balance) 
-            VALUES (:account_holder_name, :bank_name, :account_number, :password, :balance)";
+    $sql = "INSERT INTO accounts (account_holder_name, bank_name, account_number, email, password, balance) 
+            VALUES (:account_holder_name, :bank_name, :account_number, :email, :password, :balance)";
     $stmt = $pdo->prepare($sql);
 
     try {
@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,21 +41,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
     <div class="content">
-        <div class="inner-content">
+        <div id="inner-content">
             <h1>Register</h1>
             <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-            <form method="post">
-                <input type="text" name="account_holder_name" placeholder="Account Holder Name" required><br>
-                <input type="text" name="bank_name" placeholder="Bank Name" required><br>
-                <input type="text" name="account_number" placeholder="Account Number" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="number" step="0.01" name="balance" placeholder="Initial Balance" required><br>
-                <button type="submit">Register</button>
+            <form method="post" id="accountForm">
+                <input type="text" name="account_holder_name" id="holderName" placeholder="Account Holder Name" required><br>
+                <input type="text" name="bank_name" id="bankName" placeholder="Bank Name" required><br>
+                <input type="text" name="account_number" id="accountNumber" placeholder="Account Number" required><br>
+                <input type="password" name="password" id="password" placeholder="Password" required><br>
+                <input type="number" step="0.01" id="amount" name="balance" placeholder="Initial Balance" required><br>
+                <button type="submit" id="sbtn">Register</button>
+                <a href="login.php">Login</a>
             </form>
-            <a href="login.php">Login</a>
         </div>
     </div>
-
 </body>
 </html>
+
 

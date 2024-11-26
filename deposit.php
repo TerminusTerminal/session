@@ -36,17 +36,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
     <title>Deposit Money</title>
 </head>
 <body>
-    <h1>Deposit Money</h1>
-    <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="post">
-        <input type="number" name="deposit_amount" step="0.01" placeholder="Amount to Deposit" required><br>
-        <button type="submit">Deposit</button>
-    </form>
-    <a href="check_balance.php">Back to Check Balance</a>
+    <div class="topbar">
+        <div class="logo">
+            <h1>IBS</h1>
+        </div>
+        <div class="menu">
+            <a href="welcome.php">Home</a>
+            <div class="dropdown1">
+            <button onclick="myFunction1()" class="dropbtn1">About</button>
+                <div id="myDropdown1" class="dropdown-content1">
+                    <a href="about.php">About</a>
+                    <a href="">Goals</a>
+                    <a href="">ss</a>
+                    <a href="">ss</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">Services</button>
+                <div id="myDropdown2" class="dropdown-content2">
+                    <a href="check_balance.php">View Balance</a>
+                    <a href="deposit.php">Deposit</a>
+                    <a href="register.php">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="inner-content">
+            <h1>Deposit Money</h1>
+            <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+            <form method="post">
+                <input type="number" name="deposit_amount" step="0.01" placeholder="Amount to Deposit" required><br>
+                <button type="submit">Deposit</button>
+            </form>
+            <a href="check_balance.php">Back to Check Balance</a>
+        </div>
+    </div>
+    <script>
+        function myFunction1() {
+            document.getElementById("myDropdown1").classList.toggle("show");
+        }
+
+        function myFunction2() {
+            document.getElementById("myDropdown2").classList.toggle("show");
+        }
+
+            window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn1')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content1");
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.remove('show');
+            }
+        }
+        if (!event.target.matches('.dropbtn2')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content2");
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].classList.remove('show');
+            }
+        }
+    };
+</script>
 </body>
 </html>
 

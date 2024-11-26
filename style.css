@@ -17,7 +17,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     padding: 5px 40px;
     display: flex;
@@ -30,12 +30,22 @@
   }
 
   .topbar a {
+    margin-left: 0px;
+  }
+
+  .topbar .logout a {
     margin-right: 50px;
+  }
+
+  .topbar .logout .accountid a {
+    margin-right: 50px;
+    font-weight: 400;
   }
 
   .topbar .logo {
     font-size: 1.18em;
     font-weight: bold;
+    padding-right: 30px;
   }
 
   .topbar .logo h1 {
@@ -48,6 +58,7 @@
     padding-right: 1180px;
     align-items: center;
     border-radius: 4px;
+    margin-left: 50px;
   }
 
   .topbar .menu a {
@@ -73,20 +84,21 @@
   }
 
   .content {
-    padding-top: 100px;
-    max-width: 800px;
-    margin: 0 auto;
+    padding-top: 150px;
+    max-width: 500px;
+    margin-left: 500px;
+    margin-right: 500px;
     color: #fff;
-    padding-bottom: 20px;
     align-items: center;
   }
 
-  .content h1 {
-    align-items: center;
+  .login-checker {
+    margin: 0 auto;
   }
 
-  /*Just gonna put it here cuz im bad at navigating -Leynard*/
-  /*dropdown settings*/
+  .login-checker p {
+    align-items: center;
+  }
 
   .dropbtn1 {
     background-color: transparent;
@@ -179,12 +191,12 @@
   /*Inner Content Settings*/
 
   #inner-content {
-    padding: 100px;
+    padding: 300px;
     background-color: rgba(0, 0, 0, 0.9);
-    padding-bottom: 0px;
+    padding-bottom: 500px;
     border-radius: 30px;
-    padding-top: 0px;
     align-items: center;
+    padding-top: 20px;
     padding-right: 400px;
   }
 
@@ -296,21 +308,22 @@
   }
 
   #accountForm {
-    margin-top: -283px;
-    padding-bottom: 10px;
-    position: absolute; 
+    margin-top: 10px;
+    padding-right: 150px;
     top: 577px;
     right: 1018px;
     align-items: center;
     display: grid;
   }
 
+  #accountForm h1 {
+    align-self: center;
+  }
+
   #inner-content h1 {
-    margin: 0;  
     right: 20px;
     top: 295px;
     padding-right: 0;
-    padding-bottom: 10px;
   }
 
   .content-information p {
