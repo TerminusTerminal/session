@@ -55,6 +55,84 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 </div>
+<footer class="home-footer">
+    <div class="concerns-footer">
+      <div class="concerns-divider">
+        <ul>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Privacy, Cookies & Security</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Data Collection Concerns</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Data Access Agreements</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Report Frauds</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Accessibility</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">About Integrated Banking System</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Other Concerns</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Copyright</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-social-icons">
+      <div class="social-icons">
+        <ul>
+          <li>
+            <a class="icon-facebook social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-linkedin social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-instagram social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-pinterest social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-youtube social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-twitter social-icons" href="javascript:void(0)"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal-concerns">
+
+    </div>
+    <div class="copyright">
+
+    </div>
+  </footer>
     <script>
         function myFunction1() {
           document.getElementById("myDropdown1").classList.toggle("show1");

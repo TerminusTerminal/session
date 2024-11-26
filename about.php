@@ -20,9 +20,9 @@ if (!isset($_SESSION['user_id'])) {
             <h1>IBS</h1>
         </div>
         <div class="menu">
-            <a href="index.php">Home</a>
+          <a href="index.php">Home</a>
             <div class="dropdown1">
-            <button onclick="myFunction1()" class="dropbtn1">About</button>
+              <button onclick="myFunction1()" class="dropbtn1">About</button>
                 <div id="myDropdown1" class="dropdown-content1">
                     <a href="javascript:void(0)">About and Contacts</a>
                     <a href="javascript:void(0)">Goals and Insights</a>
@@ -58,6 +58,84 @@ if (!isset($_SESSION['user_id'])) {
         </div>
       </div>
     </div>
+  <footer class="home-footer">
+    <div class="concerns-footer">
+      <div class="concerns-divider">
+        <ul>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Privacy, Cookies & Security</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Data Collection Concerns</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Data Access Agreements</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Report Frauds</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Accessibility</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">About Integrated Banking System</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Other Concerns</a>
+            </span>
+          </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Copyright</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-social-icons">
+      <div class="social-icons">
+        <ul>
+          <li>
+            <a class="icon-facebook social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-linkedin social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-instagram social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-pinterest social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-youtube social-icons" href="javascript:void(0)"></a>
+          </li>
+          <li>
+            <a class="icon-twitter social-icons" href="javascript:void(0)"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal-concerns">
+
+    </div>
+    <div class="copyright">
+
+    </div>
+  </footer>
     <script>
         function myFunction1() {
           document.getElementById("myDropdown1").classList.toggle("show1");
