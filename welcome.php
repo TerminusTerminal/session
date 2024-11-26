@@ -24,10 +24,10 @@ if (!isset($_SESSION['user_id'])) {
         <div class="dropdown1">
         <button onclick="myFunction1()" class="dropbtn1">About</button>
             <div id="myDropdown1" class="dropdown-content1">
-                <a href="about.php">About</a>
-                <a href="">Goals</a>
-                <a href="">ss</a>
-                <a href="">ss</a>
+                    <a href="about.php">About and Contacts</a>
+                    <a href="javascript:void(0)">Goals and Insights</a>
+                    <a href="javascript:void(0)">News and Stories</a>
+                    <a href="javascript:void(0)">Technology</a>
             </div>
         </div>
         <div class="dropdown2">

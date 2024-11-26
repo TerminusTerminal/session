@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
     <title>Welcome</title>
 </head>
 <body>
@@ -24,10 +24,10 @@ if (!isset($_SESSION['user_id'])) {
             <div class="dropdown1">
             <button onclick="myFunction1()" class="dropbtn1">About</button>
                 <div id="myDropdown1" class="dropdown-content1">
-                    <a href="javascript:void(0)">About</a>
-                    <a href="">Goals</a>
-                    <a href="">ss</a>
-                    <a href="">ss</a>
+                    <a href="javascript:void(0)">About and Contacts</a>
+                    <a href="javascript:void(0)">Goals and Insights</a>
+                    <a href="javascript:void(0)">News and Stories</a>
+                    <a href="javascript:void(0)">Technology</a>
                 </div>
             </div>
             <div class="dropdown2">
@@ -42,8 +42,21 @@ if (!isset($_SESSION['user_id'])) {
         <?php echo htmlspecialchars($_SESSION['account_holder_name']); ?>
         <a href="logout.php">Logout</a>
     </div>
-    <div class="content">
-        <h1> Integrated Banking System </h1>
+    <div id="content-top">
+      <div id="inner-content">
+        <h1> About Us </h1>
+        <div id="sub-content">
+          <P>In a constantly evolving global economy, we adhere to honesty, efficiency, and security. Delivering Efficient, Fast and Secure services adds to the integrity of our business, helping local businesses with their growth.</P>
+        </div>
+        <h1>Our Business</h1>
+        <div id="sub-content">
+          <P>We are a local Integrated Banking System that aims to make transactions easier and faster with unparalleled security.</P>
+        </div>
+        <h1>Presence</h1>
+        <div id="sub-content">
+          <P>Our presence are within the local communities that we are going to serve that doesn't need employees to process transactions.</P>
+        </div>
+      </div>
     </div>
     <script>
         function myFunction1() {

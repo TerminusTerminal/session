@@ -31,13 +31,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="test.css">
     <title>Register</title>
 </head>
 <body>
-    <div class="topbar">
+<div class="topbar">
         <div class="logo">
             <h1>IBS</h1>
+        </div>
+        <div class="menu">
+            <a href="index.php">Home</a>
+            <div class="dropdown1">
+            <button onclick="myFunction1()" class="dropbtn1">About</button>
+                <div id="myDropdown1" class="dropdown-content1">
+                    <a href="about.php">About and Contacts</a>
+                    <a href="javascript:void(0)">Goals and Insights</a>
+                    <a href="javascript:void(0)">News and Stories</a>
+                    <a href="javascript:void(0)">Technology</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">Services</button>
+                <div id="myDropdown2" class="dropdown-content2">
+                    <a href="check_balance.php">View Balance</a>
+                    <a href="deposit.php">Deposit</a>
+                    <a href="javascript:void(0)">Create Account</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="content">

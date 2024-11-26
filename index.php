@@ -22,10 +22,10 @@ $logged_in = isset($_SESSION['user_id']);
             <div class="dropdown1">
                 <button onclick="myFunction1()" class="dropbtn1">About</button>
                 <div id="myDropdown1" class="dropdown-content1">
-                    <a href="about.php">About</a>
-                    <a href="">Goals</a>
-                    <a href="">ss</a>
-                    <a href="">ss</a>
+                    <a href="about.php">About and Contacts</a>
+                    <a href="javascript:void(0)">Goals and Insights</a>
+                    <a href="javascript:void(0)">News and Stories</a>
+                    <a href="javascript:void(0)">Technology</a>
                 </div>
             </div>
             <div class="dropdown2">
@@ -45,13 +45,19 @@ $logged_in = isset($_SESSION['user_id']);
             <a href="login.php">Login</a>
         <?php endif; ?>
     </div>
-    <div class="content">
+    <div id="content-top">`
+        <div id="inner-content">
         <h1>Integrated Banking System</h1>
-        <div class="login-checker">
+            <div id="sub-content">
+                <p>Prioritizing Efficiency, Security and customer satisfaction</p>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <div class="login-checker">
         <?php if (!$logged_in): ?>
             <p>Please <a href="login.php">login</a> or <a href="register.php">create an account</a> to access full features.</p>
         <?php endif; ?>
-    </div>
     </div>
     <script>
         function myFunction1() {
