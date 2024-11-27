@@ -158,10 +158,35 @@
   }
   .inner-content h1 {
     color: white;
+    margin-bottom: 1rem;
   }
 
   #inner-content h1 {
     margin: 0.6rem;
+  }
+
+  #numdep {
+    margin-bottom: 1rem;
+  }
+  
+  #sbtn {
+    margin-bottom: 1rem;
+  }
+
+  .account-info {
+    margin-bottom: 1rem;
+  }
+
+  .account-info p {
+    margin-bottom: 0.6rem;
+  }
+
+  .account-info h2 {
+    color: white;
+  }
+
+  .inner-content a {
+    text-decoration: none;
   }
 
   #sub-content {

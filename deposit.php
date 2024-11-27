@@ -8,27 +8,46 @@ if (!isset($_SESSION['account_number'])) { //account checker :)
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $deposit_amount = $_POST['deposit_amount'];
+  $deposit_amount = $_POST['deposit_amount'];
 
-    if ($deposit_amount > 0) {
-        $sql = "SELECT balance FROM accounts WHERE account_number = :account_number";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(['account_number' => $_SESSION['account_number']]);
-        $user = $stmt->fetch();
+  if ($deposit_amount > 0) {
+      try {
+          $pdo->beginTransaction();
+          $sql = "SELECT balance FROM accounts WHERE account_number = :account_number";
+          $stmt = $pdo->prepare($sql);
+          $stmt->execute(['account_number' => $_SESSION['account_number']]);
+          $user = $stmt->fetch();
 
-        if ($user) {
-            $new_balance = $user['balance'] + $deposit_amount;
-            $update_sql = "UPDATE accounts SET balance = :new_balance WHERE account_number = :account_number";
-            $update_stmt = $pdo->prepare($update_sql);
-            $update_stmt->execute(['new_balance' => $new_balance, 'account_number' => $_SESSION['account_number']]);
-            header('Location: check_balance.php');
-            exit;
-        } else {
-            $error = "Account not found.";
-        }
-    } else {
-        $error = "Deposit amount must be greater than zero.";
-    }
+          if ($user) {
+              $new_balance = $user['balance'] + $deposit_amount;
+              $update_sql = "UPDATE accounts SET balance = :new_balance WHERE account_number = :account_number";
+              $update_stmt = $pdo->prepare($update_sql);
+              $update_stmt->execute(['new_balance' => $new_balance, 'account_number' => $_SESSION['account_number']]);
+
+              $transaction_sql = "INSERT INTO transactions (account_number, transaction_type, amount, description)
+                                  VALUES (:account_number, 'deposit', :amount, :description)";
+              $transaction_stmt = $pdo->prepare($transaction_sql);
+              $transaction_stmt->execute([
+                  'account_number' => $_SESSION['account_number'],
+                  'amount' => $deposit_amount,
+                  'description' => 'Deposit via online banking'
+              ]);
+
+              $pdo->commit();
+
+              header('Location: check_balance.php');
+              exit;
+          } else {
+              $pdo->rollBack();
+              $error = "Account not found.";
+          }
+      } catch (Exception $e) {
+          $pdo->rollBack();
+          $error = "Error processing the deposit: " . $e->getMessage();
+      }
+  } else {
+      $error = "Deposit amount must be greater than zero.";
+  }
 }
 ?>
 
@@ -69,9 +88,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="inner-content">
             <h1>Deposit Money</h1>
             <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
-            <form method="post">
-                <input type="number" name="deposit_amount" step="0.01" placeholder="Amount to Deposit" required><br>
-                <button type="submit">Deposit</button>
+            <form method="post" id="formdep">
+                <input type="number" id="numdep" name="deposit_amount" step="0.01" placeholder="Amount to Deposit" required><br>
+                <button type="submit" id="sbtn">Deposit</button>
             </form>
             <a href="check_balance.php">Back to Check Balance</a>
         </div>
