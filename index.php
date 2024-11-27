@@ -58,7 +58,7 @@ $logged_in = isset($_SESSION['user_id']);
             <p>Please <a href="login.php">login</a> or <a href="register.php">create an account</a> to access full features.</p>
         <?php endif; ?>
     </div>
-    <footer class="home-footer">
+  <footer class="home-footer">
     <div class="concerns-footer">
       <div class="concerns-divider">
         <ul>
@@ -104,8 +104,7 @@ $logged_in = isset($_SESSION['user_id']);
           </li>
         </ul>
       </div>
-    </div>
-    <div class="footer-social-icons">
+
       <div class="social-icons">
         <ul>
           <li>
