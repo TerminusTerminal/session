@@ -102,6 +102,11 @@ $logged_in = isset($_SESSION['user_id']);
               <a href="javascript:void(0)">Copyright</a>
             </span>
           </li>
+          <li class="cs-footer">
+            <span>
+              <a href="javascript:void(0)">Others</a>
+            </span>
+          </li>
         </ul>
       </div>
 
