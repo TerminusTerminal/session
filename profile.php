@@ -38,17 +38,35 @@ try {
 </head>
 <body>
     <div class="topbar">
-        <div class="logo">
-            <h1>IBS</h1>
-        </div>
+      <div class="logo">
+        <h1>IBS</h1>
+      </div>
         <div class="menu">
-            <a href="check_balance.php">Check Balance</a>
-            <a href="deposit.php">Deposit</a>
-            <a href="logout.php">Logout</a>
+            <a href="welcome.php">Home</a>
+            <div class="dropdown1">
+            <button onclick="myFunction1()" class="dropbtn1">About</button>
+                <div id="myDropdown1" class="dropdown-content1">
+                    <a href="about.php">About and Contacts</a>
+                    <a href="javascript:void(0)">Goals and Insights</a>
+                    <a href="javascript:void(0)">News and Stories</a>
+                    <a href="javascript:void(0)">Technology</a>
+                </div>
+            </div>
+            <div class="dropdown2">
+            <button onclick="myFunction2()" class="dropbtn2">Services</button>
+                <div id="myDropdown2" class="dropdown-content2">
+                    <a href="check_balance.php">View Balance</a>
+                    <a href="deposit.php">Deposit</a>
+                    <a href="register.php">Create Account</a>
+                </div>
+            </div>
         </div>
+      <div class="logout">
+        <a href="logout.php">Logout</a>
+      </div>
     </div>
 
-    <div class="content">
+    <div id="content">
         <div class="inner-content">
         <h1>Account Details</h1>
         <?php if (isset($error)) : ?>

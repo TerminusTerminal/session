@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
     <div class="accountid">
-            <?php echo htmlspecialchars($_SESSION['account_holder_name']); ?>
+        <a href="profile.php"><?php echo htmlspecialchars($_SESSION['account_holder_name']); ?></a>
     </div>
     <div class="logout">
         <a href="logout.php">Logout</a>
