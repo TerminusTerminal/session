@@ -33,7 +33,7 @@ if ($user) {
             <h1>IBS</h1>
         </div>
         <div class="menu">
-            <a href="index.php">Home</a>
+            <a href="welcome.php">Home</a>
             <div class="dropdown1">
             <button onclick="myFunction1()" class="dropbtn1">About</button>
                 <div id="myDropdown1" class="dropdown-content1">

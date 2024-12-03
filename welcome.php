@@ -33,7 +33,7 @@ if (!isset($_SESSION['user_id'])) {
         <div class="dropdown2">
         <button onclick="myFunction2()" class="dropbtn2">Services</button>
             <div id="myDropdown2" class="dropdown-content2">
-                <a href="check_balance.php">View Balance</a>
+                <a href="transactions.php">Transactions</a>
                 <a href="deposit.php">Deposit</a>
                 <a href="register.php">Create Account</a>
             </div>

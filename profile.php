@@ -17,7 +17,7 @@ try {
         throw new Exception("Account not found.");
     }
 
-    $transactions_sql = "SELECT transaction_type, amount, description, transaction_date 
+    $transactions_sql = "SELECT transaction_id, transaction_type, amount, description, transaction_date 
                          FROM transactions 
                          WHERE account_number = :account_number 
                          ORDER BY transaction_date DESC";
@@ -85,6 +85,7 @@ try {
                 <table border="1">
                     <thead>
                         <tr>
+                            <th>Transaction ID</th>
                             <th>Type</th>
                             <th>Amount</th>
                             <th>Description</th>
@@ -94,6 +95,7 @@ try {
                     <tbody>
                         <?php foreach ($transactions as $transaction) : ?>
                             <tr>
+                                <td><?php echo htmlspecialchars($transaction['transaction_id']); ?></td>
                                 <td><?php echo htmlspecialchars(ucfirst($transaction['transaction_type'])); ?></td>
                                 <td>$<?php echo number_format($transaction['amount'], 2); ?></td>
                                 <td><?php echo htmlspecialchars($transaction['description']); ?></td>
